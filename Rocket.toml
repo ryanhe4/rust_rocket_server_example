@@ -1,0 +1,16 @@
+[default]
+address = "0.0.0.0"
+limits = { forms = "64 kB", json = "1 MiB" }
+
+## set only when compiled in debug mode, i.e, `cargo build`
+[debug]
+port = 4000
+## only the `json` key from `default` will be overridden; `forms` will remain
+limits = { json = "10MiB" }
+
+[release]
+port = 9999
+secret_key = "hPRYyVRiMyxpw5sBB1XeCMN1kFsDCqKvBi2QJxBVHQk="
+
+[global.databases]
+tablog= { url = "mysql://root:<PASSWORD>@localhost:3307/<TABLE>"}
